@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Scroll suave global */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+/* Tema escuro global */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Variáveis CSS personalizadas */
+:root {
+  --color-background: #0D0D0F;
+  --color-text: #FFFFFF;
+  --color-text-muted: #A1A1AA;
+  --color-accent-blue: #4CC9F0;
+  --color-accent-pink: #F72585;
+  --color-accent-primary: #4CC9F0;
+  --color-accent-secondary: #F72585;
+}
+
+/* Animações otimizadas - apenas as essenciais */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out both;
+}
+
+.animate-fade-in.delay-150 {
+  animation-delay: 0.15s;
+}
+
+.animate-fade-in.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Remover animações pesadas */
+.animate-pulse-cta,
+.animate-pulse-slow,
+.animate-pulse-glow {
+  animation: none;
+}

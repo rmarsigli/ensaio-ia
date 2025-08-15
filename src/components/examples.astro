@@ -1,0 +1,69 @@
+---
+import pt from "../locales/pt_BR.json"
+import example1 from "../assets/images/gallery-01.webp"
+import example2 from "../assets/images/gallery-02.webp"
+import example3 from "../assets/images/gallery-03.webp"
+import example4 from "../assets/images/gallery-04.webp"
+import example5 from "../assets/images/gallery-05.webp"
+import example6 from "../assets/images/gallery-06.webp"
+const t = pt.examples
+const examples = [
+	{
+		src: example1,
+		alt: "Ensaio IA - Foto de Perfil Elegante",
+		category: "Elegante"
+	},
+	{
+		src: example2,
+		alt: "Ensaio IA - Foto de Perfil Fotográfico",
+		category: "Fotográfico"
+	},
+	{
+		src: example3,
+		alt: "Ensaio IA - Foto de Perfil",
+		category: "Perfil"
+	},
+	{
+		src: example4,
+		alt: "Ensaio IA - Foto de Perfil ao Ar Livre",
+		category: "Ar Livre"
+	},
+	{
+		src: example5,
+		alt: "Ensaio IA - Foto de Perfil Casual",
+		category: "Casual"
+	},
+	{
+		src: example6,
+		alt: "Ensaio IA - Foto de Perfil Business",
+		category: "Business"
+	},
+] satisfies { src: ImageMetadata; alt: string; category: string }[]
+---
+<section id="examples" class="w-full py-20 flex flex-col items-center justify-center bg-transparent">
+  <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-4 bg-gradient-to-r from-[var(--color-accent-blue)] to-[var(--color-accent-pink)] bg-clip-text text-transparent">
+    {t.title}
+  </h2>
+  <p class="text-[var(--color-text-muted)] text-center max-w-2xl mb-12 text-lg">
+    {t.intro}
+  </p>
+  <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 w-full max-w-6xl space-y-4">
+    {examples.map((example) => (
+      <div class="relative mb-4 break-inside-avoid rounded-2xl overflow-hidden group shadow-lg">
+        <img
+          src={example.src.src}
+          alt={example.alt}
+          class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_24px_var(--color-accent-blue)]"
+          loading="lazy"
+          width={400}
+          height={600}
+          decoding="async"
+        />
+        <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold bg-[rgba(13,13,15,0.75)] text-[var(--color-accent-blue)] backdrop-blur-sm shadow-md border border-[var(--color-accent-blue)]">
+          {example.category}
+        </span>
+        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+      </div>
+    ))}
+  </div>
+</section> 

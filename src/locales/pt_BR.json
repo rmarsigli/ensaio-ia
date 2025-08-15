@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "headline": "O Futuro da Fotografia Chegou. E ele Começa no seu Celular.",
+    "subtitle": "Crie a partir de fotos comuns ensaios ultrarrealistas com cenários incríveis. Tenha qualidade de estúdio profissional, sem precisar sair de casa.",
+    "cta": "Descubra a Magia",
+    "cta_href": "#o-que-e",
+    "trust": "✨ Resultados que impressionam em até 7 dias.",
+    "thumbnail_alt": "Ensaio IA - Foto de Perfil",
+    "cover_alt": "Ensaio IA - Foto de Ensaio",
+    "thumbnail_desc": "Você envia a sua foto...",
+    "cover_desc": "...e recebe um ensaio completo!"
+  },
+  "about": {
+    "title": "Seu Ensaio Profissional em 3 Passos Simples",
+    "steps": [
+      {
+        "icon": "1",
+        "title": "Você nos envia suas fotos",
+        "desc": "É simples: você tira entre 10 e 15 fotos de si mesmo, seguindo nosso guia rápido para garantir os melhores ângulos e iluminação. Não precisa de câmera profissional, seu celular é suficiente."
+      },
+      {
+        "icon": "2",
+        "title": "Nossa IA Fotográfica treina e cria",
+        "desc": "Nossos algoritmos de ponta aprendem suas características únicas para criar um modelo digital seu. Em seguida, geramos suas novas fotos nos estilos e cenários de alta qualidade que você escolheu."
+      },
+      {
+        "icon": "3",
+        "title": "Você recebe seu ensaio perfeito",
+        "desc": "Em até 7 dias, seu ensaio fotográfico completo e em altíssima resolução estará pronto. Preparamos um link exclusivo para você baixar e impressionar onde quiser."
+      }
+    ]
+  },
+  "examples": {
+    "title": "Nossa Arte em Foco",
+    "intro": "Resultados ultrarrealistas criados pela nossa Inteligência Artificial. Cada imagem é uma obra de arte única, gerada para impressionar.",
+    "categories": [
+      "Corporativo", "Casual", "Esporte Fino", "Ar Livre", "Editorial", "Fashion", "Criativo", "Retrato"
+    ],
+    "alt": "Exemplo de ensaio fotográfico estilo {category} gerado por IA"
+  },
+  "plans": {
+    "title": "Escolha o Plano Perfeito para Você",
+    "plans": [
+      {
+        "name": "Essencial",
+        "price": "R$ 250",
+        "desc": "O ponto de partida ideal.",
+        "benefits": [
+          "20 fotos em alta resolução",
+          "Até 2 categorias de ensaio",
+          "Entrega em 7 dias"
+        ],
+        "cta": "Quero o Essencial"
+      },
+      {
+        "name": "Profissional",
+        "price": "R$ 350",
+        "desc": "O melhor custo-benefício para um impacto máximo.",
+        "benefits": [
+          "35 fotos em alta resolução",
+          "Até 2 categorias de ensaio",
+          "Entrega em 7 dias",
+          "Suporte prioritário"
+        ],
+        "cta": "Quero o Profissional",
+        "badge": "Mais Popular"
+      },
+      {
+        "name": "Premium",
+        "price": "R$ 400",
+        "desc": "A experiência completa e definitiva.",
+        "benefits": [
+          "40 fotos em alta resolução",
+          "Até 5 categorias de ensaio",
+          "Entrega em 7 dias",
+          "Suporte prioritário"
+        ],
+        "cta": "Quero o Premium"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Pronto para Transformar Sua Imagem?",
+    "desc": "Nossa equipe está pronta para tirar suas dúvidas e iniciar a criação do seu ensaio fotográfico com Inteligência Artificial. Fale conosco e descubra o poder de uma imagem profissionalmente reinventada.",
+    "cta": "Fale Conosco no WhatsApp"
+  },
+  "footer": {
+    "copyright": "© {year} Studio IA. Todos os direitos reservados.",
+    "links": [
+      { "label": "O que é?", "href": "#about" },
+      { "label": "Exemplos", "href": "#examples" },
+      { "label": "Planos", "href": "#plans" },
+      { "label": "Política de Privacidade", "href": "#" },
+      { "label": "Termos de Uso", "href": "#" }
+    ],
+    "instagram": "Instagram"
+  }
+}

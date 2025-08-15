@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0D0D0F;
+  --color-primary: #1E1E24;
+  --color-text-base: #E0E0E0;
+  --color-text-muted: #A0A0A0;
+  --color-accent-primary: #00D9FF;
+  --color-accent-secondary: #eeff00;
+}
+
+:root {
+  --color-background: #0D0D0F;
+  --color-primary: #1E1E24;
+  --color-text-base: #E0E0E0;
+  --color-text-muted: #A0A0A0;
+  --color-accent-pink: #eeff00;
+  --color-accent-blue: #4CC9F0;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-background);
+  color: var(--color-text-base);
+  font-family: 'Poppins', system-ui, sans-serif;
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text-base);
+  font-family: 'Poppins', system-ui, sans-serif;
+  min-height: 100vh;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent-pink);
+  color: #fff;
+}
+
+.text-glow-pink {
+  text-shadow:
+    0 0 2px var(--color-accent-pink),
+    0 0 6px rgba(229, 255, 0, 0.25),
+    0 0 12px rgba( 229, 255, 0, 0.18);
+}
+.text-glow-blue {
+  text-shadow:
+    0 0 2px var(--color-accent-blue),
+    0 0 6px rgba(229, 255, 0, 0.22),
+    0 0 12px rgba(229, 255, 0, 0.14);
+}
+.box-glow-pink {
+  box-shadow:
+    0 0 2px var(--color-accent-pink),
+    0 0 8px rgba(229, 255, 0, 0.18);
+}
+.box-glow-blue {
+  box-shadow:
+    0 0 2px var(--color-accent-blue),
+    0 0 8px rgba(76,201,240,0.14);
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 2px var(--color-accent-blue),
+      0 0 6px rgba(229, 255, 0, 0.25),
+      0 0 12px rgba(229, 255, 0, 0.18);
+  }
+  50% {
+    text-shadow:
+      0 0 4px var(--color-accent-blue),
+      0 0 12px rgba(229, 255, 0, 0.28),
+      0 0 24px rgba(229, 255, 0,0.22);
+  }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2.2s infinite cubic-bezier(.4, 0, .2, 1);
+}

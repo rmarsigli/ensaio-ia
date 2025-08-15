@@ -1,0 +1,47 @@
+---
+import pt from "../locales/pt_BR.json";
+const t = pt.contact;
+const whatsappLink = import.meta.env.PUBLIC_WHATSAPP_LINK;
+---
+<section id="contact" class="relative w-full py-24 flex flex-col items-center justify-center overflow-hidden" style="background: linear-gradient(120deg, #1E1E24 60%, #0D0D0F 100%);">
+  <!-- Efeito de fundo: gradiente + formas neon abstratas -->
+  <div aria-hidden="true" class="absolute inset-0 pointer-events-none z-0">
+    <div class="absolute -top-24 -left-24 w-[420px] h-[420px] rounded-full bg-[var(--color-accent-pink)] opacity-20 blur-3xl animate-pulse-slow"></div>
+    <div class="absolute bottom-0 right-0 w-[320px] h-[320px] rounded-full bg-[var(--color-accent-blue)] opacity-20 blur-2xl animate-pulse-slow"></div>
+  </div>
+  <div class="relative z-10 flex flex-col items-center text-center max-w-2xl px-4">
+    <h2 class="text-3xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-[var(--color-accent-pink)] to-[var(--color-accent-blue)] bg-clip-text text-transparent">
+      {t.title}
+    </h2>
+    <p class="text-lg md:text-2xl text-[var(--color-text-muted)] mb-10">
+      {t.desc}
+    </p>
+    <a href={whatsappLink} target="_blank" rel="noopener" class="inline-flex items-center gap-2 lg:gap-4 px-6 lg:px-8 px-3 lg:py-4 rounded-full font-bold text-2xl bg-[var(--color-accent-pink)] text-slate-700 uppercase shadow-xl hover:bg-[var(--color-accent-blue)] hover:text-black transition-all duration-200 animate-pulse-cta focus:outline-none focus:ring-2 focus:ring-[var(--color-accent-blue)] focus:ring-offset-2 max-lg:text-sm max-lg:py-4" style="box-shadow: 0 0 32px var(--color-accent-pink), 0 0 64px var(--color-accent-blue);">
+		<svg viewBox="0 0 20 20" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor">
+			<g transform="translate(-300.000000, -7599.000000)" fill="currentColor">
+				<g transform="translate(56.000000, 160.000000)">
+					<path d="M259.821,7453.12124 C259.58,7453.80344 258.622,7454.36761 257.858,7454.53266 C257.335,7454.64369 256.653,7454.73172 254.355,7453.77943 C251.774,7452.71011 248.19,7448.90097 248.19,7446.36621 C248.19,7445.07582 248.934,7443.57337 250.235,7443.57337 C250.861,7443.57337 250.999,7443.58538 251.205,7444.07952 C251.446,7444.6617 252.034,7446.09613 252.104,7446.24317 C252.393,7446.84635 251.81,7447.19946 251.387,7447.72462 C251.252,7447.88266 251.099,7448.05372 251.27,7448.3478 C251.44,7448.63589 252.028,7449.59418 252.892,7450.36341 C254.008,7451.35771 254.913,7451.6748 255.237,7451.80984 C255.478,7451.90987 255.766,7451.88687 255.942,7451.69881 C256.165,7451.45774 256.442,7451.05762 256.724,7450.6635 C256.923,7450.38141 257.176,7450.3464 257.441,7450.44643 C257.62,7450.50845 259.895,7451.56477 259.991,7451.73382 C260.062,7451.85686 260.062,7452.43903 259.821,7453.12124 M254.002,7439 L253.997,7439 L253.997,7439 C248.484,7439 244,7443.48535 244,7449 C244,7451.18666 244.705,7453.21526 245.904,7454.86076 L244.658,7458.57687 L248.501,7457.3485 C250.082,7458.39482 251.969,7459 254.002,7459 C259.515,7459 264,7454.51465 264,7449 C264,7443.48535 259.515,7439 254.002,7439">
+					</path>
+				</g>
+			</g>
+		</svg>
+		{t.cta}
+    </a>
+  </div>
+  <style>
+    @keyframes pulse-cta {
+      0%, 100% { box-shadow: 0 0 32px var(--color-accent-pink), 0 0 64px var(--color-accent-blue); }
+      50% { box-shadow: 0 0 48px var(--color-accent-blue), 0 0 96px var(--color-accent-pink); }
+    }
+    .animate-pulse-cta {
+      animation: pulse-cta 2.2s infinite cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.18; }
+      50% { opacity: 0.28; }
+    }
+    .animate-pulse-slow {
+      animation: pulse-slow 4.5s infinite cubic-bezier(.4,0,.2,1);
+    }
+  </style>
+</section> 

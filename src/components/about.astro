@@ -1,0 +1,20 @@
+---
+import pt from "../locales/pt_BR.json"
+const t = pt.about
+---
+<section id="about" class="w-full py-20 bg-transparent flex flex-col items-center justify-center">
+	<h2 class="text-3xl md:text-4xl lg:text-5xl max-w-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-accent-primary to-accent-secondary bg-clip-text text-transparent drop-shadow-accent-primary">
+		{t.title}
+	</h2>
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl px-4">
+		{t.steps.map((step, idx) => (
+			<div class={`bg-white/5 rounded-2xl p-8 flex flex-col items-center shadow-lg transition-transform duration-200 ${idx === 1 ? 'hover:-translate-y-2 hover:shadow-[0_0_24px_var(--color-accent-pink)] border border-transparent hover:border-[var(--color-accent-pink)]' : 'hover:-translate-y-2 hover:shadow-[0_0_24px_var(--color-accent-blue)] border border-transparent hover:border-[var(--color-accent-blue)]'}`}>
+				<div class={`text-5xl font-extrabold mb-4 ${idx === 1 ? 'text-accent-primary drop-shadow-[0_0_8px_accent_secondary]' : 'text-[var(--color-accent-blue)] drop-shadow-[0_0_8px_var(--color-accent-blue)]'}`}>
+					{step.icon}
+				</div>
+				<h3 class="text-xl font-bold mb-2 text-[var(--color-text-base)] text-center">{step.title}</h3>
+				<p class="text-[var(--color-text-muted)] text-center text-base">{step.desc}</p>
+			</div>
+		))}
+	</div>
+</section> 

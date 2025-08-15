@@ -1,0 +1,25 @@
+---
+import logo from '../assets/images/ensaio-ia-logo.svg';
+---
+<header class="sticky top-0 z-50 w-full backdrop-blur bg-[rgba(13,13,15,0.85)] border-b border-[rgba(76,201,240,0.10)] shadow-lg">
+	<div class="max-w-7xl mx-auto flex items-center justify-between py-3 px-4 md:px-8">
+		<a href="https://ensaioia.com.br" class="hover:opacity-80 transition-opacity duration-150">
+			<img src={logo.src} class="h-[32px]" alt="Studio IA" />
+		</a>
+		<div class="flex items-center justify-center gap-4 lg:gap-8">
+			<nav class="hidden md:flex gap-8 font-medium text-white">
+				<a href="#about" class="hover:text-accent-primary transition-colors duration-150">O Que é?</a>
+				<a href="#examples" class="hover:text-accent-primary transition-colors duration-150">Exemplos</a>
+				<a href="#plans" class="hover:text-accent-primary transition-colors duration-150">Planos</a>
+			</nav>
+			<a
+				href="https://wa.me/5512983173077?text=Olá, gostaria de fazer um ensaio com IA."
+				target="_blank"
+				rel="noopener"
+				class="uppercase inline-block px-6 py-2 rounded-full font-bold border-2 border-accent-primary text-accent-primary hover:text-slate-700 hover:bg-accent-primary shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-secondary focus:ring-offset-2"
+			>
+				Peça seu Ensaio
+			</a>
+		</div>
+	</div>
+</header>
