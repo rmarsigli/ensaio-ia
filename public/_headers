@@ -1,37 +1,26 @@
-# Cache headers para otimização de performance
+/fonts/*
+  Cache-Control: max-age=31536000
 
-# Fontes - cache longo (1 ano)
-/fonts/poppins/*
-  Cache-Control: public, max-age=31536000, immutable
+/*.webp
+  Cache-Control: max-age=31536000
 
-# Imagens estáticas - cache longo (1 ano)
-*.webp
-  Cache-Control: public, max-age=31536000, immutable
+/*.svg
+  Cache-Control: max-age=31536000
 
-*.svg
-  Cache-Control: public, max-age=31536000, immutable
+/*.png
+  Cache-Control: max-age=31536000
 
-*.png
-  Cache-Control: public, max-age=31536000, immutable
+/*.jpg
+  Cache-Control: max-age=31536000
 
-*.jpg
-  Cache-Control: public, max-age=31536000, immutable
+/*.css
+  Cache-Control: max-age=2592000
 
-# CSS e JS - cache médio (1 mês)
-*.css
-  Cache-Control: public, max-age=2592000, must-revalidate
+/*.js
+  Cache-Control: max-age=2592000
 
-*.js
-  Cache-Control: public, max-age=2592000, must-revalidate
-
-# HTML - cache curto (1 hora)
-*.html
-  Cache-Control: public, max-age=3600, must-revalidate
-
-# Assets do Astro - cache médio (1 mês)
 /_astro/*
-  Cache-Control: public, max-age=2592000, must-revalidate
+  Cache-Control: max-age=2592000
 
-# Página inicial - cache curto (1 hora)
 /
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: max-age=3600
