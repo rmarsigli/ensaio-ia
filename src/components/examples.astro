@@ -7,38 +7,51 @@ import example4 from "../assets/images/gallery-04.webp"
 import example5 from "../assets/images/gallery-05.webp"
 import example6 from "../assets/images/gallery-06.webp"
 const t = pt.examples
+
+// Função para gerar srcset responsivo
+function generateSrcSet(image: any, baseWidth: number) {
+  const widths = [baseWidth, baseWidth * 1.5, baseWidth * 2];
+  return widths.map(w => `${image.src} ${w}w`).join(', ');
+}
+
 const examples = [
 	{
 		src: example1,
 		alt: "Ensaio IA - Foto de Perfil Elegante",
-		category: "Elegante"
+		category: "Elegante",
+		baseWidth: 400
 	},
 	{
 		src: example2,
 		alt: "Ensaio IA - Foto de Perfil Fotográfico",
-		category: "Fotográfico"
+		category: "Fotográfico",
+		baseWidth: 400
 	},
 	{
 		src: example3,
 		alt: "Ensaio IA - Foto de Perfil",
-		category: "Perfil"
+		category: "Perfil",
+		baseWidth: 400
 	},
 	{
 		src: example4,
 		alt: "Ensaio IA - Foto de Perfil ao Ar Livre",
-		category: "Ar Livre"
+		category: "Ar Livre",
+		baseWidth: 400
 	},
 	{
 		src: example5,
 		alt: "Ensaio IA - Foto de Perfil Casual",
-		category: "Casual"
+		category: "Casual",
+		baseWidth: 400
 	},
 	{
 		src: example6,
 		alt: "Ensaio IA - Foto de Perfil Business",
-		category: "Business"
+		category: "Business",
+		baseWidth: 400
 	},
-] satisfies { src: ImageMetadata; alt: string; category: string }[]
+] satisfies { src: ImageMetadata; alt: string; category: string; baseWidth: number }[]
 ---
 <section id="examples" class="w-full py-20 flex flex-col items-center justify-center bg-transparent">
   <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-4 bg-gradient-to-r from-[var(--color-accent-blue)] to-[var(--color-accent-pink)] bg-clip-text text-transparent">
@@ -55,9 +68,11 @@ const examples = [
           alt={example.alt}
           class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_24px_var(--color-accent-blue)]"
           loading="lazy"
-          width={400}
-          height={600}
+          width={example.baseWidth}
+          height={Math.round(example.baseWidth * 1.5)}
           decoding="async"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          srcset={generateSrcSet(example.src, example.baseWidth)}
         />
         <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold bg-[rgba(13,13,15,0.75)] text-[var(--color-accent-blue)] backdrop-blur-sm shadow-md border border-[var(--color-accent-blue)]">
           {example.category}

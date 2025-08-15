@@ -32,8 +32,17 @@ const { title, description } = Astro.props;
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content="/banner.svg" />
 
+		<!-- Preload critical resources -->
 		<link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin />
 		<link rel="preload" href="/fonts/poppins/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin />
+		
+		<!-- DNS prefetch para performance -->
+		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="//wa.me" />
+		
+		<!-- Preconnect para recursos críticos -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://wa.me" />
 		
 		<AstroFont
 			config={[
@@ -69,25 +78,35 @@ const { title, description } = Astro.props;
     <slot />
     <Footer />
     
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const internalLinks = document.querySelectorAll('a[href^="#"]');
-        
-        internalLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-              targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
+    <!-- Script otimizado e deferido para scroll suave -->
+    <script defer>
+      // Scroll suave otimizado - carregamento diferido
+      if ('IntersectionObserver' in window && 'scrollBehavior' in document.documentElement.style) {
+        const handleScroll = () => {
+          const internalLinks = document.querySelectorAll('a[href^="#"]');
+          
+          internalLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              const targetId = this.getAttribute('href');
+              const targetElement = document.querySelector(targetId);
+              
+              if (targetElement) {
+                targetElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            });
           });
-        });
-      });
+        };
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', handleScroll);
+        } else {
+          handleScroll();
+        }
+      }
     </script>
   </body>
 </html> 

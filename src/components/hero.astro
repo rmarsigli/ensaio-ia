@@ -45,6 +45,7 @@ const t = pt.hero;
 						height={140}
 						loading="eager"
 						fetchpriority="high"
+						decoding="sync"
 					/>
 					<span class="w-full text-slate-700 text-xs">
 						{t.thumbnail_desc}
@@ -55,11 +56,13 @@ const t = pt.hero;
 						src={websiteCover.src}
 						alt={t.cover_alt}
 						class="w-full h-full object-cover"
-						srcset={`${websiteCover2x.src} 2x`}
+						srcset={`${websiteCover.src} 928w, ${websiteCover2x.src} 1856w`}
+						sizes="(max-width: 928px) 100vw, 928px"
 						width={928}
 						height={1152}
 						loading="eager"
 						fetchpriority="high"
+						decoding="sync"
 					/>
 					<span class="text-accent-primary font-semibold text-slate-700">
 						{t.cover_desc}
