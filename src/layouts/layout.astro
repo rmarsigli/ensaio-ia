@@ -3,11 +3,16 @@ import "./../assets/styles/global.css";
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
 import { AstroFont } from "astro-font";
+
 export interface Props {
   title: string;
   description: string;
 }
+
 const { title, description } = Astro.props;
+
+const facebookPixel = import.meta.env.PUBLIC_FACEBOOK_PIXEL;
+const googleTagManager = import.meta.env.PUBLIC_GOOGLE_TAGMANAGER_TAG;
 ---
 <!DOCTYPE html>
 <html lang="pt-BR" class="dark">
@@ -32,17 +37,37 @@ const { title, description } = Astro.props;
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content="/banner.svg" />
 
-		<!-- Preload critical resources -->
 		<link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin />
 		<link rel="preload" href="/fonts/poppins/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin />
-		
-		<!-- DNS prefetch para performance -->
 		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
 		<link rel="dns-prefetch" href="//wa.me" />
-		
-		<!-- Preconnect para recursos críticos -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://wa.me" />
+		
+		{googleTagManager && (
+			<script type="text/partytown" define:vars={{ gtmId: googleTagManager }}>
+				(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','dataLayer',gtmId);
+			</script>
+		)}
+
+		{facebookPixel && (
+			<script type="text/partytown" define:vars={{ pixelId: facebookPixel }}>
+				!function(f,b,e,v,n,t,s)
+				{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+				n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+				if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+				n.queue=[];t=b.createElement(e);t.async=!0;
+				t.src=v;s=b.getElementsByTagName(e)[0];
+				s.parentNode.insertBefore(t,s)}(window, document,'script',
+				'https://connect.facebook.net/en_US/fbevents.js');
+				fbq('init', pixelId);
+				fbq('track', 'PageView');
+			</script>
+		)}
 		
 		<AstroFont
 			config={[
@@ -74,13 +99,17 @@ const { title, description } = Astro.props;
 		/>
   </head>
   <body>
+		{googleTagManager && (
+			<noscript>
+				<iframe src={`https://www.googletagmanager.com/ns.html?id=${googleTagManager}`} height="0" width="0" style="display:none;visibility:hidden"></iframe>
+			</noscript>
+		)}
+
     <Header />
     <slot />
     <Footer />
     
-    <!-- Script otimizado e deferido para scroll suave -->
     <script defer>
-      // Scroll suave otimizado - carregamento diferido
       if ('IntersectionObserver' in window && 'scrollBehavior' in document.documentElement.style) {
         const handleScroll = () => {
           const internalLinks = document.querySelectorAll('a[href^="#"]');
