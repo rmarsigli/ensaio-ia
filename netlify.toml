@@ -36,12 +36,6 @@
   [headers.values]
     Cache-Control = "public, max-age=2592000, must-revalidate"
 
-# Configurações de compressão
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Content-Encoding = "gzip"
-
 # Segurança
 [[headers]]
   for = "/*"
@@ -57,7 +51,7 @@
   to = "/index.html"
   status = 200
 
-# Configurações de compressão específicas
+# Configurações de ambiente específicas
 [context.production]
   [context.production.environment]
     NODE_ENV = "production"
