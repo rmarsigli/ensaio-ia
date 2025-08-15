@@ -78,4 +78,10 @@ export default defineConfig({
     // Densidade de pixels
     densities: [1, 2],
   },
+
+  // Configurações de servidor para resolver encoding
+  server: {
+    port: 4321,
+    host: true,
+  },
 });
