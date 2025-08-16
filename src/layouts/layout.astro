@@ -89,13 +89,7 @@ const googleTagManager = import.meta.env.PUBLIC_GOOGLE_TAGMANAGER_TAG;
 			}
 		</style>
 
-
-
-		<link rel="preload" href="/fonts/poppins/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin />
-		<link rel="preload" href="/fonts/poppins/Poppins-Bold.ttf" as="font" type="font/ttf" crossorigin />
-		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
 		<link rel="dns-prefetch" href="//wa.me" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://wa.me" />
 		
 		{googleTagManager && (
@@ -162,34 +156,5 @@ const googleTagManager = import.meta.env.PUBLIC_GOOGLE_TAGMANAGER_TAG;
     <Header />
     <slot />
     <Footer />
-    
-    <script defer>
-      if ('IntersectionObserver' in window && 'scrollBehavior' in document.documentElement.style) {
-        const handleScroll = () => {
-          const internalLinks = document.querySelectorAll('a[href^="#"]');
-          
-          internalLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-              e.preventDefault();
-              const targetId = this.getAttribute('href');
-              const targetElement = document.querySelector(targetId);
-              
-              if (targetElement) {
-                targetElement.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
-                });
-              }
-            });
-          });
-        };
-
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', handleScroll);
-        } else {
-          handleScroll();
-        }
-      }
-    </script>
   </body>
 </html> 
