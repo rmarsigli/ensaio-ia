@@ -9,32 +9,6 @@
   --color-accent-secondary: #eeff00;
 }
 
-:root {
-  --color-background: #0D0D0F;
-  --color-primary: #1E1E24;
-  --color-text-base: #E0E0E0;
-  --color-text-muted: #A0A0A0;
-  --color-accent-pink: #eeff00;
-  --color-accent-blue: #4CC9F0;
-  font-family: 'Poppins', system-ui, sans-serif;
-}
-
-html {
-  background: var(--color-background);
-  color: var(--color-text-base);
-  font-family: 'Poppins', system-ui, sans-serif;
-  min-height: 100%;
-}
-
-body {
-  background: var(--color-background);
-  color: var(--color-text-base);
-  font-family: 'Poppins', system-ui, sans-serif;
-  min-height: 100vh;
-  letter-spacing: 0.01em;
-  -webkit-font-smoothing: antialiased;
-}
-
 ::selection {
   background: var(--color-accent-pink);
   color: #fff;

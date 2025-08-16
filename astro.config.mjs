@@ -41,11 +41,13 @@ export default defineConfig({
         },
       },
       // Otimização de assets
-      assetsInlineLimit: 4096, // 4KB
+      assetsInlineLimit: 16384, // 16KB para CSS crítico
       chunkSizeWarningLimit: 1000,
     },
     css: {
       devSourcemap: false,
+      // CSS crítico inline para melhorar LCP
+      inlineStylesheets: 'auto',
     },
     optimizeDeps: {
       include: ['react', 'react-dom'],
