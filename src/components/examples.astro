@@ -19,37 +19,43 @@ const examples = [
 		src: example1,
 		alt: "Ensaio IA - Foto de Perfil Elegante",
 		category: "Elegante",
-		baseWidth: 400
+		baseWidth: 412,
+		baseHeight: 618
 	},
 	{
 		src: example2,
 		alt: "Ensaio IA - Foto de Perfil Fotográfico",
 		category: "Fotográfico",
-		baseWidth: 400
+		baseWidth: 412,
+		baseHeight: 618
 	},
 	{
 		src: example3,
 		alt: "Ensaio IA - Foto de Perfil",
 		category: "Perfil",
-		baseWidth: 400
+		baseWidth: 412,
+		baseHeight: 618
 	},
 	{
 		src: example4,
 		alt: "Ensaio IA - Foto de Perfil ao Ar Livre",
 		category: "Ar Livre",
-		baseWidth: 400
+		baseWidth: 412,
+		baseHeight: 618
 	},
 	{
 		src: example5,
 		alt: "Ensaio IA - Foto de Perfil Casual",
 		category: "Casual",
-		baseWidth: 400
+		baseWidth: 412,
+		baseHeight: 618
 	},
 	{
 		src: example6,
 		alt: "Ensaio IA - Foto de Perfil Business",
 		category: "Business",
-		baseWidth: 400
+		baseWidth: 412,
+		baseHeight: 618
 	},
 ] satisfies { src: ImageMetadata; alt: string; category: string; baseWidth: number }[]
 ---
@@ -69,7 +75,7 @@ const examples = [
           class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_24px_var(--color-accent-blue)]"
           loading="lazy"
           width={example.baseWidth}
-          height={Math.round(example.baseWidth * 1.5)}
+          height={example.baseHeight}
           decoding="async"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           srcset={generateSrcSet(example.src, example.baseWidth)}
